@@ -1,0 +1,133 @@
+:root {
+    --myAqua: #3E8DA8;
+}
+
+.head_top {
+    height: 70px;
+    background-color: var(--myAqua);
+    display: flex;
+    padding: 0 10%;
+
+    >* {
+        /* border: 1px solid red; */
+        display: flex;
+
+    }
+
+    >figure {
+        width: 20%;
+        align-items: center;
+    }
+
+    >nav {
+        width: 80%;
+
+        >ul {
+            width: 100%;
+            height: 100%;
+            /* background-color: greenyellow; */
+            display: flex;
+            justify-content: flex-end;
+
+            >li {
+                position: relative;
+
+                /* border: 1px solid red; */
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.251);
+                }
+
+                >a {
+                    align-items: center;
+                    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                    font-size: 18px;
+                    text-transform: capitalize;
+                    /* background-color: aqua; */
+                    display: flex;
+                    height: 100%;
+                    padding: 30px;
+                    color: white;
+                }
+
+                &:hover {
+                    >ul {
+                        left: 0;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                /* start submenu */
+                >.drop {
+                    position: absolute;
+                    left: -40px;
+                    top: 70px;
+                    width: 150%;
+                    background-color: var(--myAqua);
+                    border-radius: 0 0 10px 10px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: 1s;
+
+                    >li {
+                        position: relative;
+                        width: 100%;
+                        height: 50px;
+                        /* border: 1px solid red; */
+                        padding-left: 15px;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.366);
+
+                        &:last-of-type {
+                            border-bottom: none;
+                        }
+
+                        >a {
+                            /* background-color: blueviolet; */
+                            display: flex;
+                            width: 100%;
+                            height: 100%;
+                            align-items: center;
+                            font-size: 18px;
+                            color: white;
+                            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                        }
+
+                        &:hover{
+                            >.newdrop{
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                        /* start newdrop */
+                        >.newdrop {
+                            opacity: 0;
+                            visibility: hidden;
+                            position: absolute;
+                            top: 0;
+                            left: 100%;
+                            width: 100%;
+                            background-color: var(--myAqua);
+                            >li {
+                                height: 50px;
+                                border: 1px solid rgba(255, 255, 255, 0.393);
+                                padding: 15px;
+                                >a {
+                                    width: 100%;
+                                    height: 100%;
+                                    color: white;
+                                    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                                    font-size: 18px;
+                                    display: flex;
+                                    /* justify-content: center; */
+                                    align-items: center;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+}
